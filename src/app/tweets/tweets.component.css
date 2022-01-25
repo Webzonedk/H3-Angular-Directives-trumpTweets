@@ -1,0 +1,19 @@
+h2 {
+    color: rgb(75, 159, 255);
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+}
+
+.tweetBox {
+    background-color: rgb(193, 210, 241);
+    text-decoration: solid;
+    color: rgb(255, 255, 255);
+}
+
+.userName {
+    text-decoration: solid;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+}
