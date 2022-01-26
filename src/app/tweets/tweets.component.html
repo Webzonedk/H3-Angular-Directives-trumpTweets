@@ -1,7 +1,7 @@
 <div class="container shadow px-3 py-3 my-5" style="border-radius: 25px;">
     <div class="row">
         <div class="col-xl-12 d-flex justify-content-center">
-            <h2 style="color: rgb(107, 107, 255);">
+            <h2 style="color: rgb(193, 210, 241)">
                 Velkommen til Donald Trumps tweets
             </h2>
         </div>
@@ -19,8 +19,13 @@
 
                         <div class="col-xl-12 userName"> {{name}}</div>
                         <hr>
+                        <!-- changing the tweet color depending on amount of likes -->
                         <div class="col-xl-12"> {{tweet.date | date:'dd. MMM YYYY HH:mm'}}</div>
-                        <div class="col-xl-12"><img src="assets\images\facebook-like.svg" style="width:20px;"> {{tweet.likes}}</div>
+                        <div class="col-xl-12" [ngClass]="{
+            'text-white':tweet.likes < 100000,
+            'text-success':tweet.likes > 100000,
+            'text-danger':tweet.likes > 200000
+            }"><img src="assets\images\facebook-like.svg" style="width:20px;"> {{tweet.likes}}</div>
                     </div>
                 </div>
             </div>
@@ -29,10 +34,10 @@
         <div class="col-xl-9" *ngIf="checkBuzzWords(i); else error">
             <p>{{tweet.text}}</p>
         </div>
-        <!-- showing the erormessage if the tweet is sencored -->
+        <!-- showing the erormessage if the tweet is sencored with a red warning color -->
         <ng-template #error>
             <div class="col-xl-9">
-                <p class="text-danger">{{thisIsSensored}}</p>
+                <p [ngClass]="{'text-danger':show===false}">{{thisIsSensored}}</p>
             </div>
         </ng-template>
 

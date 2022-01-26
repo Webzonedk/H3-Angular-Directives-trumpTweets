@@ -11,7 +11,7 @@ import { TweetSupplierService } from '../services/tweetSupplier.service';
 })
 export class TweetsComponent implements OnInit {
   tweets: Tweet[] = [];
-  name: string = "TheRealDonaldDuck";
+  name: string = "@TheRealDonaldDuck";
   show: boolean = false;
   buzzWords: string[] = ["Fake", "fake"];
   thisIsSensored: string ="Denne besked er sensorerer, da den indeholder falsk information, og derfor er sensoreret af det diktatoriske Sociale medie!";
