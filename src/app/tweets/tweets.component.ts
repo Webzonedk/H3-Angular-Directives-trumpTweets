@@ -16,7 +16,7 @@ export class TweetsComponent implements OnInit {
   name: string = "@TheRealDonaldDuck";
   show: boolean = false;
   buzzWords: string[] = ["Fake", "fake"];
-  thisIsSensored: string = "Denne besked er sensorerer, da den indeholder falsk information, og derfor er sensoreret af det diktatoriske Sociale medie!";
+  thisIsSensored: string = "Denne besked er censureret, da den indeholder falsk information, er den derfor bortcensureret af det diktatoriske Sociale medie for at skåne befolkningens sarte øre!";
 
   //Initializing the service
   constructor(private tweetsService: TweetSupplierService) { }
