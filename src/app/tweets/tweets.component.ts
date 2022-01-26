@@ -9,12 +9,14 @@ import { TweetSupplierService } from '../services/tweetSupplier.service';
   templateUrl: './tweets.component.html',
   styleUrls: ['./tweets.component.css']
 })
+
+//adding variables to be used
 export class TweetsComponent implements OnInit {
   tweets: Tweet[] = [];
   name: string = "@TheRealDonaldDuck";
   show: boolean = false;
   buzzWords: string[] = ["Fake", "fake"];
-  thisIsSensored: string ="Denne besked er sensorerer, da den indeholder falsk information, og derfor er sensoreret af det diktatoriske Sociale medie!";
+  thisIsSensored: string = "Denne besked er sensorerer, da den indeholder falsk information, og derfor er sensoreret af det diktatoriske Sociale medie!";
 
   //Initializing the service
   constructor(private tweetsService: TweetSupplierService) { }
@@ -25,7 +27,7 @@ export class TweetsComponent implements OnInit {
       next: this.tweets = tweet;
     });
   }
-
+  //Method to filter buzzWords from the text and add sensorship when those words occur in the text
   checkBuzzWords(index: number): boolean {
     let tweet: string = this.tweets[index].text;
 
@@ -39,9 +41,7 @@ export class TweetsComponent implements OnInit {
       };
     }
     return this.show;
-
   }
-
 }
 
 
